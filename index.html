@@ -8,38 +8,67 @@
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./styles/custom.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+    <div id="main-container">
+    <div id="calculator">
+        <div id="calculator-header">
+            <h1>Mortgage Calculator</h1>
+            <h2>Clear All</h2>
+        </div>
 
-  Mortgage Calculator
-  Clear All
+        <div id="calculator-amount">
+            <h2>Mortgage Amount</h2>
+            <div class="input-box">
+                <input type="number"/>
+                <p>&#163;</p>
+            </div>
+        </div>
 
-  Mortgage Amount
+        <div id="calculator-term">
+            <h2>Mortgage Term</h2>
+            <div class="input-box">
+                <input type="number"/>
+                <p>years</p>
+            </div>
+        </div>
 
-  Mortgage Term
+        <div id="calculator-interest-rate">
+            <h2>Interest Rate</h2>
+            <div class="input-box">
+                <input type="number">
+                <p>&#x25;</p>
+            </div>
+        </div>
+    
+        <div id="calculator-mortgage-type">
+            <h2>Mortgage Type</h2>
+            <div id="type-buttons">
+                <input type="radio" id="repayment-button" name="repayment" value="repayment">
+                <label for="repayment-button">Repayment</label>
+                <input type="radio" id="interest-button" name="interest" value="interest">
+                <label for="interest-button">Interest Only</label>
+            </div>
+        </div>
 
-  Interest Rate
+        <button type="submit">Calculate Repayments</button>
+    </div>
+    <div class="results empty">
+  
+        <h1>Results shown here</h1>
 
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
+        <p>Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.</p>
+    </div>
+    <div class="results completed">
   <!-- Completed results start -->
 
   Your results
@@ -52,7 +81,8 @@
   Total you'll repay over the term
 
   <!-- Completed results end -->
-  
+    </div>
+    </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
