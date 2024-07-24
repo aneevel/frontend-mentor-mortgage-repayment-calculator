@@ -7,7 +7,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
-
     <link rel="stylesheet" href="./styles/custom.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,20 +19,20 @@
 <body>
     <div id="main-container">
     <div id="calculator">
-        <div id="calculator-header">
+        <div id="calculator-header" class="component">
             <h1>Mortgage Calculator</h1>
             <h2>Clear All</h2>
         </div>
 
-        <div id="calculator-amount">
+        <div id="calculator-amount" class="component">
             <h2>Mortgage Amount</h2>
             <div class="input-box">
-                <input type="number"/>
                 <p>&#163;</p>
+                <input type="number"/>
             </div>
         </div>
 
-        <div id="calculator-term">
+        <div id="calculator-term" class="component">
             <h2>Mortgage Term</h2>
             <div class="input-box">
                 <input type="number"/>
@@ -41,7 +40,7 @@
             </div>
         </div>
 
-        <div id="calculator-interest-rate">
+        <div id="calculator-interest-rate" class="component">
             <h2>Interest Rate</h2>
             <div class="input-box">
                 <input type="number">
@@ -49,43 +48,50 @@
             </div>
         </div>
     
-        <div id="calculator-mortgage-type">
+        <div id="calculator-mortgage-type" class="component">
             <h2>Mortgage Type</h2>
             <div id="type-buttons">
+                <div class="mortgage-type">
                 <input type="radio" id="repayment-button" name="repayment" value="repayment">
                 <label for="repayment-button">Repayment</label>
+                </div>
+                <div class="mortgage-type">
                 <input type="radio" id="interest-button" name="interest" value="interest">
                 <label for="interest-button">Interest Only</label>
+                </div>
             </div>
         </div>
 
-        <button type="submit">Calculate Repayments</button>
+        <div id="calculate-button">
+            <img src="assets/images/icon-calculator.svg"/>
+            <button class="component" type="submit">Calculate Repayments</button>
+        </div>
     </div>
     <div class="results empty">
   
-        <h1>Results shown here</h1>
+        <h2>Results shown here</h2>
 
         <p>Complete the form and click “calculate repayments” to see what 
         your monthly repayments would be.</p>
     </div>
     <div class="results completed">
-  <!-- Completed results start -->
+        <h2>Your results</h2>
 
-  Your results
+        <p>Your results are shown below based on the information you provided. 
+        To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
+        <h3>Your monthly repayments</h3>
+        <p id="monthly-repayments"></p>
 
-  Your monthly repayments
+        <h3>Total you'll repay over the term</h3>
+        <p id="total-repayments"></p>
+    </div>
 
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
     </div>
     </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Alec Neevel</a>.
   </div>
 </body>
 </html>

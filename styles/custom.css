@@ -1,6 +1,6 @@
 :root {
     --lime: hsl(61, 70%, 52%);
-    --slate-900: hsl(202, 55%, 16);
+    --slate-900: hsl(202, 55%, 16%);
     --slate-700: hsl(200, 24%, 40%);
     --slate-500: hsl(200, 26%, 54%);
     --slate-300: hsl(203, 41%, 72%);
@@ -22,7 +22,6 @@
    font-size: 56px;
    font-style: normal;
    line-height: 125%;
-   letter-spacing: -1px;
 }
 
 html {
@@ -33,7 +32,120 @@ html {
 }
 
 #calculator {
-    margin: var(--spacing-300);
+    margin: var(--spacing-150);
+}
+
+.component {
+    margin-top: var(--spacing-300);
+}
+
+#calculator-header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--slate-900);
+    margin-bottom: var(--spacing-150);
+}
+
+h2 {
+    font-size: 16px;
+    color: var(--slate-700);
+    font-weight: 500;
+}
+
+#calculator-header h2 {
+    margin-top: 0px;
+    text-decoration: underline;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 52px;
+    border: 1px solid;
+    border-color: var(--slate-700);
+    border-radius: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 0.75rem;
+    font-size: 16px;
+    color: var(--slate-900);
+    font-weight: 900;
+    padding-left: var(--spacing-200);
+    border: none;
+}
+
+.input-box p {
+    font-size: 16px;
+    padding-top: var(--spacing-200);
+    padding-bottom: var(--spacing-200);
+    padding-right: var(--spacing-200);
+    padding-left: var(--spacing-200);
+    color: var(--slate-700);
+    font-weight: 900;
+    background-color: var(--slate-100);
+    border-radius: 5px;
+}
+
+#calculator-mortgage-type {
+    margin-top: var(--spacing-300);
+    margin-bottom: var(--spacing-400);
+}
+
+.mortgage-type {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid;
+    border-color: var(--slate-700);
+    border-radius: 5px;
+    font-weight: 900;
+    color: var(--slate-900);
+    margin-bottom: var(--spacing-100);
+    padding: var(--spacing-200);
+}
+
+.mortgage-type input {
+    transform: scale(1.5);
+    margin-bottom: var(--spacing-100);
+    margin-right: var(--spacing-300);
+}
+
+.mortgage-type label {
+    font-size: 18px;
+    vertical-align: text-bottom;
+}
+
+#calculate-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--lime);
+    color: var(--slate-900);
+    border: none;
+    border-radius: 35px;
+}
+
+#calculate-button img {
+    margin-left: 54px;
+    margin-right: 0px;
+}
+
+#calculate-button button{
+    font-size: 18px;
+    margin-left: var(--spacing-100);
+    margin-top: 0px;
+    font-weight: 700;
+    background-color: inherit;
+    text-align: center;
+    height: 1rem;
+    border: none;
+    border-radius: 35px;
 }
 
 .completed {
