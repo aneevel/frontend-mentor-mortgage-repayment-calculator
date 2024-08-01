@@ -20,78 +20,81 @@
     <div id="main-container">
     <div id="calculator">
         <div id="calculator-header" class="component">
-            <h1>Mortgage Calculator</h1>
-            <h2>Clear All</h2>
+            <h1 class="text-preset-2">Mortgage Calculator</h1>
+            <h2 class="text-preset-4">Clear All</h2>
         </div>
 
         <div id="calculator-amount" class="component">
-            <h2>Mortgage Amount</h2>
+            <h2 class="text-preset-4">Mortgage Amount</h2>
             <div class="input-box">
-                <p>&#163;</p>
-                <input type="number"/>
+                <p class="text-preset-3">&#163;</p>
+                <input class="text-preset-3" type="number"/>
             </div>
         </div>
 
         <div id="calculator-term" class="component">
-            <h2>Mortgage Term</h2>
+            <h2 class="text-preset-4">Mortgage Term</h2>
             <div class="input-box">
-                <input type="number"/>
-                <p>years</p>
+                <input class="text-preset-3"type="number"/>
+                <p class="text-preset-3">years</p>
             </div>
         </div>
 
         <div id="calculator-interest-rate" class="component">
-            <h2>Interest Rate</h2>
+            <h2 class="text-preset-4">Interest Rate</h2>
             <div class="input-box">
-                <input type="number">
-                <p>&#x25;</p>
+                <input class="text-preset-3" type="number">
+                <p class="text-preset-3">&#x25;</p>
             </div>
         </div>
     
         <div id="calculator-mortgage-type" class="component">
-            <h2>Mortgage Type</h2>
+            <h2 class="text-preset-4">Mortgage Type</h2>
             <div id="type-buttons">
                 <div class="mortgage-type">
                 <input type="radio" id="repayment-button" name="repayment" value="repayment">
-                <label for="repayment-button">Repayment</label>
+                <label class="text-preset-3" for="repayment-button">Repayment</label>
                 </div>
                 <div class="mortgage-type">
                 <input type="radio" id="interest-button" name="interest" value="interest">
-                <label for="interest-button">Interest Only</label>
+                <label class="text-preset-3" for="interest-button">Interest Only</label>
                 </div>
             </div>
         </div>
 
         <div id="calculate-button">
             <img src="assets/images/icon-calculator.svg"/>
-            <button class="component" type="submit">Calculate Repayments</button>
+            <button class="component text-preset-3" type="submit">Calculate Repayments</button>
         </div>
     </div>
+    </div>
     <div class="results empty">
-  
-        <h2>Results shown here</h2>
+        <div>
+            <img id="illustration-empty" alt="Financial materials illustration" src="./assets/images/illustration-empty.svg"/> 
+            <h2 class="text-preset-2">Results shown here</h2>
 
-        <p>Complete the form and click “calculate repayments” to see what 
-        your monthly repayments would be.</p>
+            <p class="text-preset-4">Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.</p>
+        </div>
     </div>
     <div class="results completed">
-        <h2>Your results</h2>
+        <div>
+            <h2 class="text-preset-2">Your results</h2>
 
-        <p>Your results are shown below based on the information you provided. 
-        To adjust the results, edit the form and click “calculate repayments” again.</p>
+            <p class="text-preset-4">Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-        <h3>Your monthly repayments</h3>
-        <p id="monthly-repayments"></p>
+            <h3>Your monthly repayments</h3>
+            <p id="monthly-repayments"></p>
 
-        <h3>Total you'll repay over the term</h3>
-        <p id="total-repayments"></p>
-    </div>
-
-    </div>
+            <h3>Total you'll repay over the term</h3>
+            <p id="total-repayments"></p>
+    
+        </div>
     </div>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Alec Neevel</a>.
+      <p class="text-preset-4">Challenge by <a class="text-preset-4" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.</p>
+      <p class="text-preset-5">Coded by <a class="text-preset-5" href="#">Alec Neevel</a>.</p>
   </div>
 </body>
 </html>

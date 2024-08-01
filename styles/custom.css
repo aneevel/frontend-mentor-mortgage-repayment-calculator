@@ -22,6 +22,7 @@
    font-size: 56px;
    font-style: normal;
    line-height: 125%;
+   letter-spacing: -1px;
 }
 
 html {
@@ -31,12 +32,52 @@ html {
     height: 100vh;
 }
 
+body {
+    margin: 0px;
+}
+
+.text-preset-1 {
+    font-size: 56px;
+    line-height: 125%;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.text-preset-2 {
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.text-preset-3 {
+    font-size: 18px;
+    line-height: 125%;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.text-preset-4 {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: normal;
+}
+
+.text-preset-5 {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: normal;
+}
+
 #calculator {
-    margin: var(--spacing-150);
+    margin: var(--spacing-400);
+    margin-top: var(--spacing-300);
 }
 
 .component {
-    margin-top: var(--spacing-300);
+    margin-top: var(--spacing-200);
 }
 
 #calculator-header {
@@ -146,6 +187,37 @@ h2 {
     height: 1rem;
     border: none;
     border-radius: 35px;
+}
+
+.results {
+    padding: 0px;
+    width: 100%;
+    background-color: var(--slate-900);
+}
+
+.results div {
+    padding: var(--spacing-400) var(--spacing-300) var(--spacing-400) var(--spacing-300);
+}
+
+#illustration-empty {
+    display: block;
+    width: 192px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.results div h2 {
+    text-align: center;
+    color: var(--white);
+}
+
+.results div p {
+    text-align: center;
+    color: var(--slate-300);
+}
+
+.attribution {
+    padding: var(--spacing-400) var(--spacing-300) var(--spacing-400) var(--spacing-300);
 }
 
 .completed {
