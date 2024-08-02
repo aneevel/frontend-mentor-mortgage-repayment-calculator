@@ -17,6 +17,7 @@
   </style>
 </head>
 <body>
+    <form id="calculatorForm">
     <div id="main-container">
     <div id="calculator">
         <div id="calculator-header" class="component">
@@ -28,14 +29,14 @@
             <h2 class="text-preset-4">Mortgage Amount</h2>
             <div class="input-box">
                 <p class="text-preset-3">&#163;</p>
-                <input class="text-preset-3" type="number"/>
+                <input id="amount" name="amount" class="text-preset-3" type="number"/>
             </div>
         </div>
 
         <div id="calculator-term" class="component">
             <h2 class="text-preset-4">Mortgage Term</h2>
             <div class="input-box">
-                <input class="text-preset-3"type="number"/>
+                <input id="terms" name="terms" class="text-preset-3"type="number"/>
                 <p class="text-preset-3">years</p>
             </div>
         </div>
@@ -43,7 +44,7 @@
         <div id="calculator-interest-rate" class="component">
             <h2 class="text-preset-4">Interest Rate</h2>
             <div class="input-box">
-                <input class="text-preset-3" type="number">
+                <input id="rate" name="rate" class="text-preset-3" type="number">
                 <p class="text-preset-3">&#x25;</p>
             </div>
         </div>
@@ -79,16 +80,20 @@
     </div>
     <div class="results completed">
         <div>
-            <h2 class="text-preset-2">Your results</h2>
+            <h2 id="results-header" class="text-preset-2">Your results</h2>
 
-            <p class="text-preset-4">Your results are shown below based on the information you provided. 
+            <p id="results-descriptor" class="text-preset-4">Your results are shown below based on the information you provided. 
             To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-            <h3>Your monthly repayments</h3>
-            <p id="monthly-repayments"></p>
+            <div id="repayment-details">
+                <h3 id="monthly-repayment-header" class="text-preset-4">Your monthly repayments</h3>
+                <p class="text-preset-1" style="color: var(--lime)" id="monthly-repayments">&#163;</p>
 
-            <h3>Total you'll repay over the term</h3>
-            <p id="total-repayments"></p>
+                <hr/>
+
+                <h3 id="total-repayment-header" class="text-preset-4">Total you'll repay over the term</h3>
+                <p class="text-preset-2" id="total-repayments">&#163;</p>
+            </div>
     
         </div>
     </div>
@@ -96,5 +101,38 @@
       <p class="text-preset-4">Challenge by <a class="text-preset-4" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.</p>
       <p class="text-preset-5">Coded by <a class="text-preset-5" href="#">Alec Neevel</a>.</p>
   </div>
+    </form>
 </body>
 </html>
+<script>
+function calculateMortgageResults() {
+
+    const form = document.forms.calculatorForm;
+    const formData = new FormData(form);
+
+    const amount = formData.get('amount');
+    const terms = formData.get('terms');
+    const rate = formData.get('rate');
+
+    const paymentsPerYear = 12;
+    const interestPerMonth = (rate / 100) / paymentsPerYear;
+    const numberOfPayments = paymentsPerYear * terms;
+
+    const monthlyPayment = amount * (((interestPerMonth * Math.pow(1 + interestPerMonth, numberOfPayments)) / (Math.pow(1 + interestPerMonth, numberOfPayments) - 1)));
+
+    const internationalNumberFormat = new Intl.NumberFormat('en-US');
+
+    document.querySelector("#total-repayments").innerText += internationalNumberFormat.format((monthlyPayment * numberOfPayments).toFixed(2));
+    document.querySelector("#monthly-repayments").innerText += internationalNumberFormat.format(monthlyPayment.toFixed(2));
+
+    document.querySelector(".results.completed").style.display = "block";
+    document.querySelector(".results.empty").style.display = "none";
+}
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", (event) => {
+    event.preventDefault();
+    calculateMortgageResults();
+});
+</script>

@@ -216,6 +216,41 @@ h2 {
     color: var(--slate-300);
 }
 
+#monthly-repayments {
+    font-size: 40px;
+    margin: var(--spacing-100);
+}
+
+#monthly-repayment-header, #monthly-repayments, #total-repayments {
+    margin-top: 0px;
+}
+
+#repayment-details h3 {
+    color: var(--slate-300);
+}
+
+#results-header, #results-descriptor, #monthly-repayment-header, #monthly-repayments, #total-repayment-header, #total-repayments {
+    text-align: left;
+    margin-left: 0px;
+}
+
+#total-repayments {
+    color: var(--white);
+    margin-bottom: 0px;
+}
+
+hr {
+    color: rgba(154, 190, 213, 25%);
+}
+
+#repayment-details {
+    background-color: rgba(0, 0, 0, 25%);
+    border-radius: 8px;
+    border-top-style: solid;
+    border-top-color: var(--lime);
+    border-top-width: 4px;
+}
+
 .attribution {
     padding: var(--spacing-400) var(--spacing-300) var(--spacing-400) var(--spacing-300);
 }
