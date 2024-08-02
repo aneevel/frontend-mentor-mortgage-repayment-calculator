@@ -109,7 +109,16 @@ h2 {
     height: 52px;
     border: 1px solid;
     border-color: var(--slate-700);
-    border-radius: 5px;
+}
+
+.left-border-round {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.right-border-round {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .input-box input {
@@ -131,7 +140,6 @@ h2 {
     color: var(--slate-700);
     font-weight: 900;
     background-color: var(--slate-100);
-    border-radius: 5px;
 }
 
 #calculator-mortgage-type {
@@ -257,4 +265,18 @@ hr {
 
 .completed {
     display: none;
+}
+
+active {
+    background-color: color-mix(in srgb, var(--lime), var(--white) 50%);
+}
+
+@keyframes background-color-change {
+    30% { background-color: var(--lime); }
+    90% { background-color: var(--slate-100); }
+}
+
+@keyframes border-color-change {
+    30% { border-color: var(--lime); } 
+    90% { border-color: var(--slate-900); }
 }

@@ -27,25 +27,25 @@
 
         <div id="calculator-amount" class="component">
             <h2 class="text-preset-4">Mortgage Amount</h2>
-            <div class="input-box">
-                <p class="text-preset-3">&#163;</p>
-                <input id="amount" name="amount" class="text-preset-3" type="number"/>
+            <div class="input-box left-border-round">
+                <p class="text-preset-3 left-border-round">&#163;</p>
+                <input required id="amount" name="amount" class="text-preset-3" type="number"/>
             </div>
         </div>
 
         <div id="calculator-term" class="component">
             <h2 class="text-preset-4">Mortgage Term</h2>
-            <div class="input-box">
-                <input id="terms" name="terms" class="text-preset-3"type="number"/>
-                <p class="text-preset-3">years</p>
+            <div class="input-box right-border-round">
+                <input required id="terms" name="terms" class="text-preset-3"type="number"/>
+                <p class="text-preset-3 right-border-round">years</p>
             </div>
         </div>
 
         <div id="calculator-interest-rate" class="component">
             <h2 class="text-preset-4">Interest Rate</h2>
-            <div class="input-box">
-                <input id="rate" name="rate" class="text-preset-3" type="number">
-                <p class="text-preset-3">&#x25;</p>
+            <div class="input-box right-border-round">
+                <input required id="rate" name="rate" class="text-preset-3" type="number">
+                <p class="text-preset-3 right-border-round">&#x25;</p>
             </div>
         </div>
     
@@ -53,11 +53,11 @@
             <h2 class="text-preset-4">Mortgage Type</h2>
             <div id="type-buttons">
                 <div class="mortgage-type">
-                <input type="radio" id="repayment-button" name="repayment" value="repayment">
+                <input required type="radio" id="repayment-button" name="mortgage-type" value="repayment">
                 <label class="text-preset-3" for="repayment-button">Repayment</label>
                 </div>
                 <div class="mortgage-type">
-                <input type="radio" id="interest-button" name="interest" value="interest">
+                <input type="radio" id="interest-button" name="mortgage-type" value="interest">
                 <label class="text-preset-3" for="interest-button">Interest Only</label>
                 </div>
             </div>
@@ -134,5 +134,17 @@ const button = document.querySelector("button");
 button.addEventListener("click", (event) => {
     event.preventDefault();
     calculateMortgageResults();
+});
+
+document.querySelectorAll('.input-box').forEach((item) => {
+    item.addEventListener('click', (event) => {
+        for (const child of item.children)
+        {
+            if (child.tagName === 'P') {
+                child.style.animation = "background-color-change 2s";
+            }
+        }
+        item.style.animation = "border-color-change 2s";
+    });
 });
 </script>
