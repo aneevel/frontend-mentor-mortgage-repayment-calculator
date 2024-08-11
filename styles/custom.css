@@ -131,6 +131,10 @@ h2 {
     border: none;
 }
 
+input:focus {
+    outline: none;
+}
+
 .input-box p {
     font-size: 16px;
     padding-top: var(--spacing-200);
@@ -267,7 +271,7 @@ hr {
     display: none;
 }
 
-active {
+#calculate-button:hover {
     background-color: color-mix(in srgb, var(--lime), var(--white) 50%);
 }
 
