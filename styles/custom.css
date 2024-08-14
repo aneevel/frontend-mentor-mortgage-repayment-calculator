@@ -23,17 +23,20 @@
    font-style: normal;
    line-height: 125%;
    letter-spacing: -1px;
+   margin: 0px;
+   padding: 0px;
 }
 
 html {
     box-sizing: border-box;
     margin: 0px;
-    height: 0px;
+    padding: 0px;
     height: 100vh;
 }
 
 body {
     margin: 0px;
+    padding: 0px;
 }
 
 .text-preset-1 {
@@ -106,6 +109,7 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: var(--spacing-150);
     height: 52px;
     border: 1px solid;
     border-color: var(--slate-700);
@@ -144,6 +148,10 @@ input:focus {
     color: var(--slate-700);
     font-weight: 900;
     background-color: var(--slate-100);
+}
+
+.mortgage-type:hover {
+    border-color: var(--lime);
 }
 
 #calculator-mortgage-type {
@@ -211,6 +219,10 @@ input:focus {
     padding: var(--spacing-400) var(--spacing-300) var(--spacing-400) var(--spacing-300);
 }
 
+.results h2, .results p {
+    margin-top: var(--spacing-200);
+}
+
 #illustration-empty {
     display: block;
     width: 192px;
@@ -230,11 +242,15 @@ input:focus {
 
 #monthly-repayments {
     font-size: 40px;
-    margin: var(--spacing-100);
+    margin: var(--spacing-150);
 }
 
-#monthly-repayment-header, #monthly-repayments, #total-repayments {
-    margin-top: 0px;
+#total-repayments {
+    margin-top: var(--spacing-150);
+}
+
+#total-repayment-header {
+    margin-top: var(--spacing-200);
 }
 
 #repayment-details h3 {
@@ -256,6 +272,7 @@ hr {
 }
 
 #repayment-details {
+    margin-top: var(--spacing-200);
     background-color: rgba(0, 0, 0, 25%);
     border-radius: 8px;
     border-top-style: solid;
@@ -284,3 +301,138 @@ hr {
     30% { border-color: var(--lime); } 
     90% { border-color: var(--slate-900); }
 }
+
+@media (width >= 768px) {
+   body {
+       background-color: var(--slate-100);
+   }
+
+   #calculator {
+       margin-left: var(--spacing-500);
+   }
+
+   #calculatorForm {
+       margin: var(--spacing-500);
+       background-color: var(--white);
+       border-radius: 30px;
+   }
+    
+   #calculator-header h1 {
+       margin: var(--spacing-500);
+       margin-left: 0px;
+   }
+
+   #calculator-header h2 {
+       margin-bottom: 0px;
+   }
+
+   #calculator-header {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .component { 
+       margin-top: var(--spacing-300);
+   }
+
+   #second-row {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .attribution {
+       margin-bottom: var(--spacing-500);
+   }
+
+   @media (width >= 1440px) {
+       
+        body {
+            height: 100%;
+        }
+
+        main {
+            height: 100%;
+            display: flex;
+        }
+
+        #calculatorForm {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            height: 62.5vh;
+            margin: auto;
+            border-radius: 30px;
+        }
+
+        #main-container {
+            width: 50%;
+        }
+
+        #calculator-header {
+            margin-top: var(--spacing-500);
+        }
+
+        #calculator-header h1, #calculator-header h2 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #calculator-amount {
+            margin-top: var(--spacing-500);
+        }
+
+        #second-row {
+            gap: var(--spacing-300);
+        }
+
+        #calculator-mortgage-type {
+            margin-bottom: var(--spacing-500);
+        }
+
+        #calculate-button {
+            img {
+                margin: 0px;
+            }
+            width: 70%;
+            justify-content: center;
+        }
+
+        .mortgage-type {
+            margin-top: var(--spacing-150);
+        }
+
+        .attribution {
+            display: none;
+        }
+
+        .results.empty {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .results h2, .results p {
+            margin-top: var(--spacing-200);
+        }
+
+        .results.completed {
+
+        }
+
+        .results {
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        .input-box p {
+            padding: 15px;
+        }
+   }
+}
+

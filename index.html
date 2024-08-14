@@ -17,6 +17,7 @@
   </style>
 </head>
 <body>
+    <main>
     <form id="calculatorForm">
     <div id="main-container">
     <div id="calculator">
@@ -27,25 +28,27 @@
 
         <div id="calculator-amount" class="component">
             <h2 class="text-preset-4">Mortgage Amount</h2>
-            <div class="input-box left-border-round">
-                <p class="text-preset-3 left-border-round">&#163;</p>
+            <div class="input-box left-border-round right-border-round">
+                <p class="text-preset-3 left-border-round right-border-round">&#163;</p>
                 <input required id="amount" name="amount" class="text-preset-3" type="number"/>
             </div>
         </div>
 
-        <div id="calculator-term" class="component">
-            <h2 class="text-preset-4">Mortgage Term</h2>
-            <div class="input-box right-border-round">
-                <input required id="terms" name="terms" class="text-preset-3"type="number"/>
-                <p class="text-preset-3 right-border-round">years</p>
+        <div id="second-row">
+            <div id="calculator-term" class="component">
+                <h2 class="text-preset-4">Mortgage Term</h2>
+                <div class="input-box right-border-round left-border-round">
+                    <input required id="terms" name="terms" class="text-preset-3"type="number"/>
+                    <p class="text-preset-3 right-border-round">years</p>
+                </div>
             </div>
-        </div>
 
-        <div id="calculator-interest-rate" class="component">
-            <h2 class="text-preset-4">Interest Rate</h2>
-            <div class="input-box right-border-round">
-                <input required id="rate" name="rate" class="text-preset-3" type="number">
-                <p class="text-preset-3 right-border-round">&#x25;</p>
+            <div id="calculator-interest-rate" class="component">
+                <h2 class="text-preset-4">Interest Rate</h2>
+                <div class="input-box right-border-round left-border-round">
+                    <input required id="rate" name="rate" class="text-preset-3" type="number">
+                    <p class="text-preset-3 right-border-round">&#x25;</p>
+                </div>
             </div>
         </div>
     
@@ -103,6 +106,7 @@
   </div>
     </form>
 </body>
+    </main>
 </html>
 <script>
 function calculateMortgageResults() {
@@ -125,7 +129,7 @@ function calculateMortgageResults() {
     document.querySelector("#total-repayments").innerText += internationalNumberFormat.format((monthlyPayment * numberOfPayments).toFixed(2));
     document.querySelector("#monthly-repayments").innerText += internationalNumberFormat.format(monthlyPayment.toFixed(2));
 
-    document.querySelector(".results.completed").style.display = "block";
+    document.querySelector(".results.completed").style.display = "flex";
     document.querySelector(".results.empty").style.display = "none";
 }
 
