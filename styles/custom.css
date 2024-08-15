@@ -173,7 +173,6 @@ input:focus {
 
 .mortgage-type input {
     transform: scale(1.5);
-    margin-bottom: var(--spacing-100);
     margin-right: var(--spacing-300);
 }
 
@@ -288,18 +287,22 @@ hr {
     display: none;
 }
 
+.mortgage-type:focus {
+    background-color: color-mix(in srgb, var(--lime), var(--white) 85%);
+}
+
 #calculate-button:hover {
     background-color: color-mix(in srgb, var(--lime), var(--white) 50%);
 }
 
 @keyframes background-color-change {
-    30% { background-color: var(--lime); }
-    90% { background-color: var(--slate-100); }
+    0% { background-color: var(--lime); }
+    100% { background-color: var(--slate-100); }
 }
 
 @keyframes border-color-change {
-    30% { border-color: var(--lime); } 
-    90% { border-color: var(--slate-900); }
+    0% { border-color: var(--lime); } 
+    100% { border-color: var(--slate-900); }
 }
 
 @media (width >= 768px) {

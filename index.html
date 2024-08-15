@@ -145,10 +145,16 @@ document.querySelectorAll('.input-box').forEach((item) => {
         for (const child of item.children)
         {
             if (child.tagName === 'P') {
-                child.style.animation = "background-color-change 2s";
+                child.style.animation = "background-color-change 3s";
             }
         }
-        item.style.animation = "border-color-change 2s";
+        item.style.animation = "border-color-change 3s";
+    });
+});
+
+document.querySelectorAll('.mortgage-type').forEach((item) => {
+    item.addEventListener('click', (event) => {
+        console.log("click!");
     });
 });
 </script>
