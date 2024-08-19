@@ -287,12 +287,13 @@ hr {
     display: none;
 }
 
-.mortgage-type:focus {
-    background-color: color-mix(in srgb, var(--lime), var(--white) 85%);
-}
-
 #calculate-button:hover {
     background-color: color-mix(in srgb, var(--lime), var(--white) 50%);
+}
+
+.active-background {
+    background-color: color-mix(in srgb, var(--lime), var(--white) 85%);
+    border-color: var(--lime);
 }
 
 @keyframes background-color-change {

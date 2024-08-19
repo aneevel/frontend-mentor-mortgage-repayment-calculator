@@ -133,6 +133,15 @@ function calculateMortgageResults() {
     document.querySelector(".results.empty").style.display = "none";
 }
 
+function selectMortgageType(selectedItem) {
+    selectedItem.classList.add('active-background');
+    document.querySelectorAll('.mortgage-type').forEach((item) => {
+        if (selectedItem !== item) {
+            item.classList.remove('active-background');
+        }
+    });
+}
+
 const button = document.querySelector("button");
 
 button.addEventListener("click", (event) => {
@@ -154,7 +163,8 @@ document.querySelectorAll('.input-box').forEach((item) => {
 
 document.querySelectorAll('.mortgage-type').forEach((item) => {
     item.addEventListener('click', (event) => {
-        console.log("click!");
+        selectMortgageType(item);
     });
 });
+
 </script>
