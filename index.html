@@ -130,8 +130,8 @@ function calculateMortgageResults() {
 
     const internationalNumberFormat = new Intl.NumberFormat('en-US');
 
-    document.querySelector("#total-repayments").innerText += internationalNumberFormat.format((monthlyPayment * numberOfPayments).toFixed(2));
-    document.querySelector("#monthly-repayments").innerText += internationalNumberFormat.format(monthlyPayment.toFixed(2));
+    document.querySelector("#total-repayments").innerText = internationalNumberFormat.format((monthlyPayment * numberOfPayments).toFixed(2));
+    document.querySelector("#monthly-repayments").innerText = internationalNumberFormat.format(monthlyPayment.toFixed(2));
 
     document.querySelector(".results.completed").style.display = "flex";
     document.querySelector(".results.empty").style.display = "none";
