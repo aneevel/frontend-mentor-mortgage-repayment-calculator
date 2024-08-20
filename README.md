@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Screenshot
 
-[x](./1440-screenshot.jpg)
-[x](./375-screenshot.jpg)
+[Desktop View](./1440-screenshot.jpg)
+[Mobile View](./375-screenshot.jpg)
 
 ### Links
 
