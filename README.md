@@ -46,17 +46,15 @@ Users should be able to:
 
 ### What I learned
 
+For this solution, I got a bit more involved in the javascript and practiced a bit of client-side
+validation. It was a rather straightforward way of doing validation, though it really only checks for
+the presence of a value, not whether it matches the appropriate pattern or not.
+
+I also got to explore the CSS 'filter' attribute, which allowed me to change the color of the radio
+buttons. This was a fun little exploration, and gave me a few ideas of how I can create some interesting
+visual effects for elements in the future.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Alec Neevel](https://www.alecneevel.com)
+- Frontend Mentor - [@aneevel](https://www.frontendmentor.io/profile/aneevel)
