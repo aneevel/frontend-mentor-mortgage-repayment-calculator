@@ -32,6 +32,7 @@
                 <p class="text-preset-3 left-border-round right-border-round">&#163;</p>
                 <input required id="amount" name="amount" class="text-preset-3" type="number"/>
             </div>
+            <p class="error-message text-preset-5">This field is required</p>
         </div>
 
         <div id="second-row">
@@ -41,6 +42,7 @@
                     <input required id="terms" name="terms" class="text-preset-3"type="number"/>
                     <p class="text-preset-3 right-border-round">years</p>
                 </div>
+                <p class="error-message text-preset-5">This field is required</p>
             </div>
 
             <div id="calculator-interest-rate" class="component">
@@ -49,6 +51,7 @@
                     <input required id="rate" name="rate" class="text-preset-3" type="number">
                     <p class="text-preset-3 right-border-round">&#x25;</p>
                 </div>
+                <p class="error-message text-preset-5">This field is required</p>
             </div>
         </div>
     
@@ -64,6 +67,7 @@
                 <label class="text-preset-3" for="interest-button">Interest Only</label>
                 </div>
             </div>
+            <p class="error-message text-preset-5">This field is required</p>
         </div>
 
         <div id="calculate-button">
@@ -142,11 +146,79 @@ function selectMortgageType(selectedItem) {
     });
 }
 
+function validateForm() {
+    let form = document.forms.calculatorForm;
+    const formData = new FormData(form);
+    
+    let valid = true;
+    if (formData.get('amount') === '') {
+        addErrorMessage('calculator-amount');
+        valid = false;
+    } else {
+        removeErrorMessage('calculator-amount');
+    }
+
+    if (formData.get('terms') === '') {
+        addErrorMessage('calculator-term');
+        valid = false;
+    } else {
+        removeErrorMessage('calculator-term');
+    }
+
+    if (formData.get('rate') === '') {
+        addErrorMessage('calculator-interest-rate');
+        valid = false;
+    } else {
+        removeErrorMessage('calculator-interest-rate');
+    }
+
+    if (formData.get('mortgage-type') === null) {
+        addErrorMessage('calculator-mortgage-type');
+        valid = false;
+    } else {
+        removeErrorMessage('calculator-mortgage-type');
+    }
+
+    return valid;
+}
+
+function addErrorMessage(elementID) {
+    let element = document.querySelector(`#${elementID}`);
+    element.classList.add("error-state");
+
+    let errorMessage = document.querySelector(`#${elementID}>p`);
+    errorMessage.style.display = 'block'
+}
+
+function removeErrorMessage(elementID) {
+    let element = document.querySelector(`#${elementID}`);
+    element.classList.remove("error-state");
+
+    let errorMessage = document.querySelector(`#${elementID}>p`);
+    errorMessage.style.display = 'none';
+}
+
+function setFormToErrorState() {
+    let formElement = document.querySelector('#calculatorForm');
+    formElement.style.height = '75vh';
+}
+
+function setFormToValidState() {
+    let formElement = document.querySelector('#calculatorForm');
+    formElement.style.height = '62.5vh';
+}
+
 const button = document.querySelector("button");
 
 button.addEventListener("click", (event) => {
     event.preventDefault();
-    calculateMortgageResults();
+    if (validateForm() === true)
+    {
+        setFormToValidState();
+        calculateMortgageResults();
+    } else {
+        setFormToErrorState();
+    }
 });
 
 document.querySelectorAll('.input-box').forEach((item) => {

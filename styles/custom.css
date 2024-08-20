@@ -300,6 +300,21 @@ hr {
     filter: brightness(3) hue-rotate(250deg);
 }
 
+.error-message {
+    margin-top: var(--spacing-200);
+    color: red;
+    display: none;
+}
+
+.error-state p:not(.error-message) {
+    background-color: red;
+    color: var(--white);
+}
+
+.error-state div:not(.mortgage-type) {
+    border-color: red;
+}
+
 @keyframes background-color-change {
     0% { background-color: var(--lime); }
     100% { background-color: var(--slate-100); }
