@@ -296,6 +296,10 @@ hr {
     border-color: var(--lime);
 }
 
+.active-background input {
+    filter: brightness(3) hue-rotate(250deg);
+}
+
 @keyframes background-color-change {
     0% { background-color: var(--lime); }
     100% { background-color: var(--slate-100); }
